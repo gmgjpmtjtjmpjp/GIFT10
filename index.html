@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FakeTikTokCoins — Get Coins (Demo)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🎯</div>
+      <div class="title">
+        <div class="main">FakeTikTokCoins</div>
+        <div class="sub">Get Coins — Demo (表示のみ)</div>
+      </div>
+    </div>
+    <div class="balanceWrap">
+      <div class="label">Your Balance</div>
+      <div id="balance" class="balance">0</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2 class="panelTitle">Get Coins</h2>
+      <p class="muted">下のパックを選んで購入（※デモ：課金は発生しません）。</p>
+
+      <div class="grid" id="packs">
+        <!-- JS will populate packs -->
+      </div>
+
+      <div class="orRow">
+        <span class="line"></span>
+        <span class="orText">または</span>
+        <span class="line"></span>
+      </div>
+
+      <div class="customBox">
+        <label class="small">Custom (Coins)</label>
+        <div class="row">
+          <input id="customCoins" type="number" min="1" placeholder="例: 250" />
+          <button id="buyCustom" class="btn primary">Buy</button>
+        </div>
+        <div class="small muted" style="margin-top:8px">※ 金額は架空です。購入するとデモ残高が増えます。</div>
+      </div>
+
+      <div class="actions">
+        <button id="goBack" class="btn ghost">Go Back</button>
+        <button id="sendGift" class="btn accent">Send Gift (Demo)</button>
+      </div>
+    </section>
+
+    <aside class="panel side">
+      <h3>Plan Pricing (Demo)</h3>
+      <ul class="priceList">
+        <li>70 — $0.99</li>
+        <li>350 — $4.99</li>
+        <li>700 — $9.99</li>
+        <li>1,400 — $18.99</li>
+        <li>3,500 — $45.00</li>
+        <li>7,000 — $89.99</li>
+        <li>Custom — price varies (demo)</li>
+      </ul>
+      <div style="height:14px"></div>
+      <div class="note muted">このページはデモ（見た目）です。実際の決済は行われません。</div>
+    </aside>
+  </main>
+
+  <!-- payment modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modalDialog">
+      <div class="check">✔</div>
+      <div id="modalTitle" class="mTitle">Payment completed</div>
+      <div id="modalDesc" class="mDesc">You purchased <strong id="modalCoins">0</strong> coins (demo).</div>
+      <div class="mButtons">
+        <button id="modalClose" class="btn ghost">Go Back</button>
+        <button id="modalContinue" class="btn primary">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
